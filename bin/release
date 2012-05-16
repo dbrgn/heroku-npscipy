@@ -10,12 +10,15 @@ cat <<EOF
 config_vars:
   PATH: /app/.heroku/venv/bin:/bin:/usr/local/bin:/usr/bin
   PYTHONUNBUFFERED: true
-  LIBRARY_PATH: /app/.heroku/vendor/lib
-  LD_LIBRARY_PATH: /app/.heroku/vendor/lib
+  LIBRARY_PATH: /app/.heroku/vendor/lib:/app/.heroku/vendor/lib/atlas-base:/app/.heroku/vendor/lib/atlas-base/atlas
+  LD_LIBRARY_PATH: /app/.heroku/vendor/lib:/app/.heroku/vendor/lib/atlas-base:/app/.heroku/vendor/lib/atlas-base/atlas
   LANG: en_US.UTF-8
   PYTHONHASHSEED: random
   PYTHONHOME: /app/.heroku/venv/
   PYTHONPATH: /app/
+  BLAS: /app/.heroku/vendor/lib/atlas-base/atlas/libblas.a
+  LAPACK: /app/.heroku/vendor/lib/atlas-base/atlas/liblapack.a
+  ATLAS: /app/.heroku/vendor/lib/atlas-base/libatlas.a
 EOF
 
 
